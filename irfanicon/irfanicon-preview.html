@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>irfanicon glyphs preview</title>
+
+    <style>
+      /* Page Styles */
+
+      * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fff;
+        color: #444;
+        font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      a,
+      a:visited {
+        color: #888;
+        text-decoration: underline;
+      }
+      a:hover,
+      a:focus { color: #000; }
+
+      header {
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 20px;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+
+      header h1 {
+        color: #888;
+        float: left;
+        font-size: 36px;
+        font-weight: 300;
+      }
+
+      header a {
+        float: right;
+        font-size: 14px;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        min-width: 960px;
+        padding: 0 40px;
+        width: 90%;
+      }
+
+      .glyph {
+        border-bottom: 1px dotted #ccc;
+        padding: 10px 0 20px;
+        margin-bottom: 20px;
+      }
+
+      .preview-glyphs { vertical-align: bottom; }
+
+      .preview-scale {
+        color: #888;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .step {
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        width: 10%;
+      }
+
+      .step .letters,
+      .step i {
+        -webkit-transition: opacity .3s;
+        -moz-transition: opacity .3s;
+        -ms-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s;
+      }
+
+      .step:hover .letters { opacity: 1; }
+      .step:hover i { opacity: .3; }
+
+      .letters {
+        opacity: .3;
+        position: absolute;
+      }
+
+      .characters-off .letters { display: none; }
+      .characters-off .step:hover i { opacity: 1; }
+
+      
+      .size-12 { font-size: 12px; }
+      
+      .size-14 { font-size: 14px; }
+      
+      .size-16 { font-size: 16px; }
+      
+      .size-18 { font-size: 18px; }
+      
+      .size-21 { font-size: 21px; }
+      
+      .size-24 { font-size: 24px; }
+      
+      .size-36 { font-size: 36px; }
+      
+      .size-48 { font-size: 48px; }
+      
+      .size-60 { font-size: 60px; }
+      
+      .size-72 { font-size: 72px; }
+      
+
+      .usage { margin-top: 10px; }
+
+      .usage input {
+        font-family: monospace;
+        margin-right: 3px;
+        padding: 2px 5px;
+        text-align: center;
+      }
+
+      .usage .point { width: 150px; }
+
+      .usage .class { width: 250px; }
+
+      footer {
+        color: #888;
+        font-size: 12px;
+        padding: 20px 0;
+      }
+
+      /* Icon Font: irfanicon */
+
+      @font-face {
+  font-family: "irfanicon";
+  src: url("./irfanicon.eot?") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "irfanicon";
+  src: url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAVkAA0AAAAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAFSAAAABoAAAAck9sPvk9TLzIAAAGcAAAASQAAAGBP9ly5Y21hcAAAAgAAAABKAAABSuH1Ff9jdnQgAAACTAAAAAQAAAAEABEBRGdhc3AAAAVAAAAACAAAAAj//wADZ2x5ZgAAAmAAAAF+AAABtAo0STdoZWFkAAABMAAAAC4AAAA2GnLgq2hoZWEAAAFgAAAAHAAAACQD8AHGaG10eAAAAegAAAAWAAAAFgQtABFsb2NhAAACUAAAAA4AAAAOAS4A5G1heHAAAAF8AAAAHwAAACAATAB4bmFtZQAAA+AAAAEuAAACN6TOATdwb3N0AAAFEAAAAC8AAAA+pD9BxnjaY2BkYGAAYinjsM3x/DZfGbiZGEDgzsoL4gj6/wEmBsYDQC4HA1gaABpkCmkAAHjaY2BkYGA88P8Agx4TAwgASUYGVMAKAFCVArp42mNgZGBgYGNwZ2BhAAEmIGZkAIk5MOiBBAALDADFAHjaY2BhnME4gYGVgYHRhzGNgYHBHUp/ZZBkaGFgYGJgZWaAAUYBBgQISHNNYWhgUPjIyHjg/wEGPcYDDA4gNUhKFBgYASTxC1IAAAAAuwARAAAAAACqAAAAyAAAAgAAAAAAAAB42mNgYGBmgGAZBkYGEHAB8hjBfBYGDSDNBqQZGZgYFD4y/v8P5Ct8ZPj///9jfhaoeiBgZGOAcxiZgAQTAypghFgxnAEAxYMI5wAAABEBRAAAACoAKgAqACoAkADaAAB42jWPvU4CQRSF752FmSXusgz7B6yMsAszhQkCy2JDLK1cG+MLWKBv4ANYaK0Jib6CFSRa01rYWVrT6RMYdLawubk595yb8wEBDgCPeA4GMBgsEQ5mK1aCr/GSlj9nK4PoFZZGIZcLecUo/sxWWOgpT7lKecLvrudzPN8+c0z1NwT4fSOAr3AMUB8HvkcZldkMs4k6MvSYKsmkomyADtKQ+p4gobYoqeIqhkEoSodekVIDHVl8LC5OKyZv9HteZFWD4V43FkHCmGO33F6/YRujZrVFKKvWLDSsesfDSiW/wJeHq7ObJuq6Q6/jELs1TNSu6LOuiWg6NqJs76pk2LKJFQT7DYKMmW1CucnoTtugJmnenF1BSbOsNcsaHHBBwEjjaSLu0aQby4xPpqmbJb47nk5kXJCgriyTmDKtptlkOg7aiO++EP52XszLXLpRJCMrwJOsV+9X8jwUIa7/7/jki22+2WBdmyLX9q3t930v82p7m9taGNZu4Q+zukiNAAB42oWPP0/DMBDFn/sPZUGoI5MXxlqO1QF169IBMXXowBa1bmrhJJKTdmVj5iMwMvHp+AC8uAYhMTSRc787v7t3AXCNTwicnzs8JhbI8Jp4gCu8Jx5S85V4hEyoxGPciKfEE9ZfqBSjjNlD7OpZYIqQeEDft8RDaj4SjzAVt4nHkOI+8YT1Zzj271GgJrWoSA4eCls0zBQklsw9Y+BNiQM66vrMMlrGE787KuHCvqhdWxXOq21TKbn0XgZXHrpWBtvacLK7XvbHsXepfzq3DXHNaSWOdCyow9qWR18QVlHZxRiosNzB0FUzLnj+Tz3XDeaYxWOoNcg5qqm7VRNKK43SciF/3clmPpvPjDb5pT038d9b3p29NN887qPjTtjY0DrO1DpXWmt5YeA3+W9eWwAAeNpjYGIAg/+3GCQZsAE2IGZkYGJgZmRiZGZLzyzJKE3iyMnMy05NycwDAJlKB+cAAAAAAf//AAJ42mNgYGBkAIJb7fn9IPrOygviMBoATjMHOQAA") format("woff"),
+       url("./irfanicon.woff2") format("woff2"),
+       url("./irfanicon.ttf") format("truetype"),
+       url("./irfanicon.svg#irfanicon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "irfanicon";
+    src: url("./irfanicon.svg#irfanicon") format("svg");
+  }
+}
+
+      [data-icon]:before { content: attr(data-icon); }
+
+      [data-icon]:before,
+      .i-github::before,
+.i-linkedin::before {
+        display: inline-block;
+  font-family: "irfanicon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+      }
+
+      .i-github::before { content: "\f100"; }
+.i-linkedin::before { content: "\f101"; }
+    </style>
+
+    <script>
+      function toggleCharacters() {
+        var body = document.getElementsByTagName('body')[0];
+        body.className = body.className === 'characters-off' ? '' : 'characters-off';
+      }
+    </script>
+  </head>
+
+  <body class="characters-off">
+    <div id="page" class="container">
+      <header>
+        <h1>irfanicon contains 2 glyphs:</h1>
+        <a onclick="toggleCharacters(); return false;" href="#">Toggle Preview Characters</a>
+      </header>
+
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="i-github" class="i-github"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".i-github" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf100;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="i-linkedin" class="i-linkedin"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".i-linkedin" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf101;" />
+        </div>
+      </div>
+      
+
+      <footer>
+        Made with love using <a href="http://fontcustom.com">Font Custom</a>.
+      </footer>
+    </div>
+  </body>
+</html>

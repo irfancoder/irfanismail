@@ -3,9 +3,12 @@
         <Nuxt />
     </div>
 </template>
-
+<script>
+export default {}
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300&display=swap');
+@import '~/irfanicon/irfanicon.css';
 html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;

@@ -1,47 +1,110 @@
 <template>
-    <div class="container">
-        <div>
-            <Logo />
-            <h1 class="font-bold text-6xl">irfanismail</h1>
-            <p>{{ random_gif.data.image_url }}</p>
-            <img :src="random_gif.data.image_url" />
-            <div class="links">
-                <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green"> Documentation </a>
-                <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey"> GitHub </a>
+    <Base>
+        <div class="container mx-auto">
+            <toggle />
+            <div class="main">
+                <media />
+                <hero />
             </div>
+            <skills title="Web Development 🛠️">
+                <template #default>
+                    <div>
+                        <h3>Frameworks</h3>
+                        <div class="skills-group">
+                            <tooltip title="Vue"><img class="skills-icon" src="~/assets/icons/vue.svg" alt="" /></tooltip>
+                            <tooltip title="React"><img class="skills-icon" src="~/assets/icons/react.svg" alt="" /></tooltip>
+                            <tooltip title="Laravel"><img class="skills-icon" src="~/assets/icons/laravel.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Applications</h3>
+                        <div class="skills-group">
+                            <tooltip title="NodeJS"><img class="skills-icon" src="~/assets/icons/nodejs.svg" alt="" /></tooltip>
+                            <tooltip title="NextJS"><img class="skills-icon" src="~/assets/icons/nextjs.svg" alt="" /></tooltip>
+                            <tooltip title="NuxtJS"><img class="skills-icon" src="~/assets/icons/nuxtjs.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Css Frameworks</h3>
+                        <div class="skills-group">
+                            <tooltip title="TailwindCSS"><img class="skills-icon" src="~/assets/icons/tailwindcss.svg" alt="" /></tooltip>
+                            <tooltip title="Sass"><img class="skills-icon" src="~/assets/icons/sass.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Database</h3>
+                        <div class="skills-group">
+                            <tooltip title="MySQL"><img class="skills-icon" src="~/assets/icons/mysql.svg" alt="" /></tooltip>
+                            <tooltip title="Mongo"><img class="skills-icon" src="~/assets/icons/mongo.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Deployment Tools</h3>
+                        <div class="skills-group">
+                            <tooltip title="NGiNX"><img class="skills-icon" src="~/assets/icons/nginx.svg" alt="" /></tooltip>
+                            <tooltip title="PM2"><img class="skills-icon" src="~/assets/icons/pm2.svg" alt="" /></tooltip>
+                            <tooltip title="ubuntu"><img class="skills-icon" src="~/assets/icons/ubuntu.svg" alt="" /></tooltip>
+                            <tooltip title="Git"><img class="skills-icon" src="~/assets/icons/git.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                </template>
+            </skills>
+
+            <!-- <skills title="Mobile Development">
+                <template #default>
+                    <div>
+                        <h3>Application</h3>
+                        <div class="skills-group">
+                            <tooltip title="Android Studio"><img class="skills-icon" src="~/assets/icons/android.svg" alt="" /></tooltip>
+                            <tooltip title="React"><img class="skills-icon" src="~/assets/icons/react.svg" alt="" /></tooltip>
+                            <tooltip title="Laravel"><img class="skills-icon" src="~/assets/icons/laravel.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Applications</h3>
+                        <div class="skills-group">
+                            <tooltip title="NodeJS"><img class="skills-icon" src="~/assets/icons/nodejs.svg" alt="" /></tooltip>
+                            <tooltip title="NextJS"><img class="skills-icon" src="~/assets/icons/nextjs.svg" alt="" /></tooltip>
+                            <tooltip title="NuxtJS"><img class="skills-icon" src="~/assets/icons/nuxtjs.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Css Frameworks</h3>
+                        <div class="skills-group">
+                            <tooltip title="TailwindCSS"><img class="skills-icon" src="~/assets/icons/tailwindcss.svg" alt="" /></tooltip>
+                            <tooltip title="Sass"><img class="skills-icon" src="~/assets/icons/sass.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Tools</h3>
+                        <div class="skills-group">
+                            <tooltip title="Git"><img class="skills-icon" src="~/assets/icons/git.svg" alt="" /></tooltip>
+                        </div>
+                    </div>
+                </template>
+            </skills> -->
         </div>
-    </div>
+    </Base>
 </template>
 
 <script>
-import TestPls from '~/components/TestPls.vue'
+import Base from '~/components/layout/base.vue'
+import Hero from '~/components/home/Hero.vue'
+import Media from '~/components/home/Media.vue'
+import Toggle from '~/components/Toggle.vue'
+import Skills from '~/components/home/Skills.vue'
 export default {
-    components: { TestPls },
+    components: { Base, Hero, Media, Toggle, Skills },
     data() {
         return {}
-    },
-    async asyncData({ params, $axios }) {
-        const random_gif = await $axios.$get(`https://api.giphy.com/v1/gifs/random?tag=git&rating=pg&api_key=3erSJdMZOYiNjVgMtpr3ooqGb9pC2KGC`)
-
-        console.log(random_gif)
-        return { random_gif }
     }
 }
 </script>
-giphy api key: 3erSJdMZOYiNjVgMtpr3ooqGb9pC2KGC
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.main {
+    @apply gap-28;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
 .title {
@@ -63,5 +126,12 @@ giphy api key: 3erSJdMZOYiNjVgMtpr3ooqGb9pC2KGC
 
 .links {
     padding-top: 15px;
+}
+
+.skills-group {
+    @apply flex flex-row space-x-16 py-12;
+}
+.skills-icon {
+    @apply w-16 h-auto;
 }
 </style>
