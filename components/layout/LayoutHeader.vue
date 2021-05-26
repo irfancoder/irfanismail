@@ -1,11 +1,11 @@
 <template>
     <div>
         <nav>
-            <h1>irfanismail.</h1>
+            <h1><nuxt-link to="/">irfanismail.</nuxt-link></h1>
             <ul>
-                <li><nuxt-link to="#">Portfolio</nuxt-link></li>
-                <li><nuxt-link to="#">Blogs</nuxt-link></li>
-                <li><nuxt-link to="#">Contact</nuxt-link></li>
+                <li @click="$colorMode.preference = 'dark'"><nuxt-link to="/portfolio">Portfolio</nuxt-link></li>
+                <li @click="$colorMode.preference = 'dark'"><nuxt-link to="#">Blogs</nuxt-link></li>
+                <li @click="$colorMode.preference = 'dark'"><nuxt-link to="#">Contact</nuxt-link></li>
             </ul>
         </nav>
     </div>

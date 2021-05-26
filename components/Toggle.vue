@@ -2,7 +2,7 @@
     <div class="flex items-center space-x-6 py-16">
         <span class="label">Fun</span>
         <label class="switch">
-            <input type="checkbox" @change="changeTheme($event)" />
+            <input type="checkbox" v-model="getTheme" @change="changeTheme($event)" />
             <span class="slider round"></span>
         </label>
         <span class="label">Professional</span>
@@ -15,6 +15,11 @@ export default {
         changeTheme(event) {
             if (event.target.checked) this.$colorMode.preference = 'dark'
             else this.$colorMode.preference = 'light'
+        }
+    },
+    computed: {
+        getTheme() {
+            return this.$colorMode.preference == 'dark'
         }
     }
 }

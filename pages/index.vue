@@ -1,5 +1,5 @@
 <template>
-    <Base>
+    <LayoutBase>
         <div class="container mx-auto">
             <toggle />
             <div class="main">
@@ -84,17 +84,17 @@
                 </template>
             </skills> -->
         </div>
-    </Base>
+    </LayoutBase>
 </template>
 
 <script>
-import Base from '~/components/layout/base.vue'
+import LayoutBase from '~/components/layout/LayoutBase.vue'
 import Hero from '~/components/home/Hero.vue'
 import Media from '~/components/home/Media.vue'
 import Toggle from '~/components/Toggle.vue'
 import Skills from '~/components/home/Skills.vue'
 export default {
-    components: { Base, Hero, Media, Toggle, Skills },
+    components: { LayoutBase, Hero, Media, Toggle, Skills },
     data() {
         return {}
     }

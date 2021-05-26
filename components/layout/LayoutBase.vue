@@ -1,25 +1,24 @@
 <template>
-    <div id="layout" class="layout">
-        <vheader></vheader>
-        <div>
+    <div id="layout" :class="backgroundClass" class="flex flex-col">
+        <layout-header></layout-header>
+        <div class="flex-1">
             <slot></slot>
         </div>
-        <vfooter></vfooter>
+        <layout-footer></layout-footer>
     </div>
 </template>
 
 <script>
-import vheader from './vheader'
-import vfooter from './vfooter'
+import LayoutFooter from './LayoutFooter.vue'
+import LayoutHeader from './LayoutHeader.vue'
 export default {
     components: {
-        vheader,
-        vfooter
+        LayoutHeader,
+        LayoutFooter
     },
-    watch: {
-        '$colorMode.preference': function(value) {
-            let layout = document.getElementById('layout')
-            value === 'dark' ? (layout.className = 'layout paused box') : (layout.className = 'layout')
+    computed: {
+        backgroundClass() {
+            return this.$colorMode.preference === 'dark' ? 'layout paused box' : 'layout animate'
         }
     }
 }
@@ -28,11 +27,13 @@ export default {
 <style scoped>
 .layout {
     @apply w-full bg-red-100 min-h-screen dark:bg-gray-900;
+}
+
+.animate {
     animation: wave 5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 .box {
     background-image: linear-gradient(rgba(107, 107, 107, 0.1) 2px, transparent 2px), linear-gradient(to right, rgba(107, 107, 107, 0.1) 2px, #111827 2px);
     background-size: 80px 80px;
