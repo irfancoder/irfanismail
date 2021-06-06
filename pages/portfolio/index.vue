@@ -3,7 +3,7 @@
         <template #default>
             <div>
                 <div class="container mx-auto py-16 flex flex-row justify-between">
-                    <div>
+                    <div class="px-6">
                         <h1>Portfolio</h1>
                         <p>Years of hardwork, documented.</p>
                     </div>
@@ -12,7 +12,7 @@
                         <img class="arrow" src="~/assets/icons/arrow-key.svg" @click="scrollHorizontal('right')" alt="" />
                     </div>
                 </div>
-                <div tabindex="1" id="pfolio" class="flex flex-row gap-24 flex-nowrap overflow-auto px-24">
+                <div tabindex="1" id="pfolio" class="flex flex-col md:flex-row gap-4 md:gap-24 flex-nowrap md:overflow-auto px-4 md:px-24">
                     <div v-for="(portfolio, index) in portfolios" :key="index">
                         <portfolio-item :data="portfolio" />
                     </div>
@@ -41,7 +41,7 @@ export default {
                     description: 'Developed the website for YouthVentures, a youth community builder based in Cyberjaya ',
                     year: '2021',
                     stack: 'NextJS & Strapi', //
-                    status: 'Active' // values: active / discontinued
+                    status: 'active' // values: active / discontinued
                 },
                 {
                     image_url: 'https://runcloud.io/images/irfan.png?066a7e1b7ed74c266de56be53ce43e50',
@@ -51,7 +51,7 @@ export default {
                     description: 'Currently working for RunCloud as their Front End Engineer. Responsible for the front end development of RunCloud related projects.',
                     year: '2021',
                     stack: 'Laravel & Vue', //
-                    status: 'Active' // values: active / discontinued
+                    status: 'active' // values: active / discontinued
                 },
                 {
                     image_url: 'https://images.prismic.io/ombak/bb9de2ee-f13e-4fdb-8715-4469803abc4c_WhatsApp+Image+2019-12-20+at+3.49.16+PM.jpeg?auto=compress,format',
@@ -61,7 +61,7 @@ export default {
                     description: 'Developed an interactive wall system for an Airbnb establishment based in Sabah using Raspberry Pis, touch sensors and projectors',
                     year: '2019',
                     stack: 'OpenFrameworks, Raspberry Pis', //
-                    status: 'Done' // values: active / discontinued
+                    status: 'done' // values: active / discontinued
                 },
                 {
                     image_url: require('~/assets/images/ombak.png'),
@@ -71,7 +71,7 @@ export default {
                     description: 'Cofounded a software development house as a side hustle while studying for my Bachelors degree.',
                     year: '2019',
                     stack: 'Gatsby, Netlify', //
-                    status: 'Inactive' // values: active / discontinued
+                    status: 'inactive' // values: active / discontinued
                 },
                 {
                     image_url: 'https://images.prismic.io/ombak/43489afb-a09a-4d52-87e5-bd20c1218c25_Screenshot+2020-04-16+at+2.31.34+AM.png?auto=compress,format',
@@ -82,7 +82,7 @@ export default {
                         'Cofounded a startup community builder based in Miri. We run early stage startup programs such as Techstars Startup Weekends and hackathons all over Sarawak, Malaysia',
                     year: '2018-2020',
                     stack: 'NextJS, Strapi', //
-                    status: 'Discontinued' // values: active / discontinued
+                    status: 'discontinued' // values: active / discontinued
                 },
                 {
                     image_url: 'https://images.prismic.io/ombak/486b842b-bac1-47ca-86ba-2da7c3617e9d_Screenshot+2020-02-09+at+1.58.52+AM.png?auto=compress,format',
@@ -93,7 +93,7 @@ export default {
                         'Developed a student companion application with bus tracking functionality for Curtin Malaysia campus. However, only the Android version of the application is released. ',
                     year: '2017',
                     stack: 'Android', //
-                    status: 'Discontinued' // values: active / discontinued
+                    status: 'discontinued' // values: active / discontinued
                 }
             ]
         }
@@ -116,10 +116,10 @@ export default {
 
 <style scoped>
 h1 {
-    @apply text-7xl font-extrabold text-gray-50;
+    @apply text-4xl md:text-7xl font-extrabold text-gray-50;
 }
 p {
-    @apply text-3xl text-gray-50 font-normal pt-12;
+    @apply text-xl md:text-3xl text-gray-50 font-normal pt-12;
 }
 .arrow {
     @apply h-28 w-auto;

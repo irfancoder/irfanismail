@@ -1,13 +1,15 @@
 <template>
-    <div class="flex flex-col py-16 space-y-6">
-        <div v-if="$colorMode.preference !== 'dark'">
+    <div class="flex flex-col py-6 space-y-6">
+        <div class="space-y-2" v-if="$colorMode.preference !== 'dark'">
             <div class="img-container">
                 <img :src="src" :alt="gif.alt" />
             </div>
             <button @click="fetchGif" :disabled="loading">{{ loading ? 'Loading' : 'Refresh' }}</button>
         </div>
         <div v-else>
-            <img class="border-8 border-white shadow-lg" src="~/assets/images/profile.jpg" alt="A picture of Irfan Ismail" loading="lazy" />
+            <p class="text-gray-300 text-right transform -rotate-12 translate-y-6">&#8672; That's me!</p>
+
+            <img class="border-8 border-white shadow-lg mb-4" src="~/assets/images/profile.jpg" alt="A picture of Irfan Ismail" loading="lazy" />
         </div>
     </div>
 </template>

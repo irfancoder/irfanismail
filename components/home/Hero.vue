@@ -1,37 +1,38 @@
 <template>
-    <div class="pb-32">
-        <h1>{{ $colorMode.preference === 'dark' ? 'Hello.' : "What's up homie? &#128293;" }}</h1>
+    <div class="pb-24">
+        <h1>{{ $colorMode.preference === 'dark' ? 'Hi there!' : "What's up homie? &#128293;" }}</h1>
         <h3>
-            {{ $colorMode.preference === 'dark' ? "I'm a software developer, with somewhat mad front end skills." : 'Check out my work and holla me up if we match.' }}
+            {{ $colorMode.preference === 'dark' ? "I'm Irfan, a self-learning software engineering guy. Based in Cyberjaya, Malaysia. 🇲🇾" : 'Check out my work and holla me up if we match.' }}
         </h3>
 
-        <p>Irfan Ismail</p>
-        <p class="pt-4">Malaysia 🇲🇾</p>
-
-        <div class="pt-16">
-            <span class="dark:text-white">You can connect with me here:</span>
+        <div class="py-16">
+            <span class="dark:text-gray-300">You can connect with me here:</span>
             <ul>
-                <li><vbutton icon="i-github" url="#">GitHub</vbutton></li>
-                <li><vbutton icon="i-linkedin" url="#">LinkedIn</vbutton></li>
+                <li class="space-x-2">
+                    <i class="i-github"></i>
+                    <a class="text-opacity-30 hover:underline hover:text-opacity-100" href="#"> GitHub </a>
+                </li>
+                <li>
+                    <i class="i-linkedin"></i>
+                    <a class="hover:underline" href="#"> LinkedIn </a>
+                </li>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
-import vbutton from '../vbutton.vue'
-export default {
-    components: { vbutton }
-}
+export default {}
 </script>
 
 <style lang="css" scoped>
 h1 {
-    @apply text-8xl font-extrabold text-gray-900 dark:text-gray-50;
+    @apply text-7xl font-extrabold text-gray-900 dark:text-gray-50;
+    /* text-shadow: 4px 3px rgba(17, 24, 39, 1); */
 }
 
 h3 {
-    @apply text-7xl font-bold py-20 text-gray-900 dark:text-gray-50 leading-snug;
+    @apply text-4xl font-bold pt-20 text-gray-900 dark:text-gray-300 leading-snug max-w-3xl;
 }
 
 p {

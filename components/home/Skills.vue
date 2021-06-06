@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .skills {
-    @apply grid grid-cols-1 md:grid-cols-2 mx-auto gap-32 py-24 px-8 md:px-24 border-8 border-dashed rounded-lg;
+    @apply grid grid-cols-1 md:grid-cols-2 mx-auto gap-32 py-24 px-8;
 }
 
 img {

@@ -6,7 +6,8 @@
                 <media />
                 <hero />
             </div>
-            <skills title="Web Development 🛠️">
+            <!-- <p class="text-7xl text-opacity-70 animate-pulse text-center text-white">&ShortDownArrow;</p> -->
+            <!-- <skills title="Web Development 🛠️">
                 <template #default>
                     <div>
                         <h3>Frameworks</h3>
@@ -48,8 +49,7 @@
                         </div>
                     </div>
                 </template>
-            </skills>
-
+            </skills> -->
             <!-- <skills title="Mobile Development">
                 <template #default>
                     <div>
@@ -83,24 +83,80 @@
                     </div>
                 </template>
             </skills> -->
+
+            <div class="py-28">
+                <h3 class="text-5xl font-semibold pb-4 text-gray-900 dark:text-gray-50">Projects</h3>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Project</th>
+                            <th width="40%">Description</th>
+                            <th>Language</th>
+                            <th>Created at</th>
+                            <th>Size (kB)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(project, index) in projects" :key="project.id">
+                            <td>{{ index + 1 + (page - 1) * per_page }}</td>
+                            <td>{{ project.name }}</td>
+                            <td>{{ project.description }}</td>
+                            <td>{{ project.language }}</td>
+                            <td>{{ project.created_at }}</td>
+                            <td>{{ project.size }}</td>
+                        </tr>
+                        <tr v-if="projects.length == 0">
+                            <td colspan="6">No more projects listed</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <paginate-table :page="page" @update="update" :disable-next="projects.length < per_page"></paginate-table>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </LayoutBase>
 </template>
 
 <script>
+import _ from 'lodash'
 import LayoutBase from '~/components/layout/LayoutBase.vue'
 import Hero from '~/components/home/Hero.vue'
 import Media from '~/components/home/Media.vue'
 import Toggle from '~/components/Toggle.vue'
 import Skills from '~/components/home/Skills.vue'
+import PaginateTable from '~/components/PaginateTable.vue'
 export default {
-    components: { LayoutBase, Hero, Media, Toggle, Skills },
+    components: { LayoutBase, Hero, Media, Toggle, Skills, PaginateTable },
     data() {
-        return {}
+        return {
+            projects: [],
+            page: 1,
+            per_page: 8
+        }
+    },
+
+    async fetch() {
+        this.projects = await fetch(`https://api.github.com/users/irfancoder/repos?per_page=${this.per_page}&page=${this.page}`).then(res => res.json())
+    },
+    methods: {
+        async updateProjects(_page) {
+            this.projects = await fetch(`https://api.github.com/users/irfancoder/repos?per_page=${this.per_page}&page=${_page}`).then(res => res.json())
+        },
+        update(direction) {
+            this.page = this.page + direction
+            this.updateProjects(this.page)
+        }
     }
 }
 </script>
-<style>
+<style lang="scss" scoped>
 .main {
     @apply gap-28;
     display: grid;
@@ -133,5 +189,42 @@ export default {
 }
 .skills-icon {
     @apply w-16 h-auto;
+}
+
+.table {
+    @apply relative max-w-full w-full my-4;
+
+    td,
+    th {
+        @apply px-4 border-b border-r border-gray-400 border-opacity-30 text-left;
+
+        &:last-child {
+            @apply border-r-0;
+        }
+    }
+
+    > thead > tr > th {
+        @apply bg-gray-300  py-4;
+        &:first-child {
+            @apply rounded-tl-md;
+        }
+        &:last-child {
+            @apply rounded-tr-md;
+        }
+    }
+
+    > tbody > tr > td {
+        @apply bg-gray-50 py-2;
+    }
+
+    > tfoot > tr > td {
+        @apply bg-gray-300 py-4 text-right;
+        &:first-child {
+            @apply rounded-bl-md;
+        }
+        &:last-child {
+            @apply rounded-br-md;
+        }
+    }
 }
 </style>
