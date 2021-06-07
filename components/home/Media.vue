@@ -1,12 +1,12 @@
 <template>
     <div class="flex flex-col py-6 space-y-6 items-center md:items-left">
-        <div class="space-y-2 px-4 md:px-0" v-if="$colorMode.preference !== 'dark'">
+        <div class="flex flex-col space-y-2 px-4 md:px-0" v-if="$colorMode.preference !== 'dark'">
             <div class="img-container">
                 <img :src="src" :alt="gif.alt" />
             </div>
 
             <button @click="fetchGif" :disabled="loading">{{ loading ? 'Loading...' : 'Refresh' }}</button>
-            <p class="text-xs text-right">Powered by Giphy</p>
+            <img class="self-end h-3" src="~/assets/images/credit_giphy.png" />
         </div>
         <div class="px-4 md:px-0" v-else>
             <p class="text-gray-300 text-right transform -rotate-12 translate-y-6">&#8672; That's me!</p>
