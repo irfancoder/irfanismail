@@ -34,7 +34,7 @@ export default {
     methods: {
         async fetchGif() {
             this.loading = true
-            const random_gif = await fetch(`https://api.giphy.com/v1/gifs/random?tag=git&rating=pg&api_key=3erSJdMZOYiNjVgMtpr3ooqGb9pC2KGC`).then(res => {
+            const random_gif = await fetch(`https://api.giphy.com/v1/gifs/random?tag=git&rating=pg&api_key=${process.env.GIPHY_API_KEY}`).then(res => {
                 this.loading = false
                 return res.json()
             })

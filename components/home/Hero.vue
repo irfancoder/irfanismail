@@ -2,7 +2,11 @@
     <div class="pb-24 px-4 md:px-0">
         <h1>{{ $colorMode.preference === 'dark' ? 'Hi there!' : "What's up homie? &#128293;" }}</h1>
         <h3>
-            {{ $colorMode.preference === 'dark' ? "I'm Irfan, a self-learning software engineering guy. Based in Cyberjaya, Malaysia. 🇲🇾" : 'Check out my work and holla me up if we match.' }}
+            {{
+                $colorMode.preference === 'dark'
+                    ? "I'm Irfan, a self-learning software engineer with somewhat mad frontend skills. Based in Cyberjaya, Malaysia. 🇲🇾"
+                    : 'Check out my work and holla me up if we match.'
+            }}
         </h3>
 
         <div class="py-16">
@@ -32,7 +36,7 @@ h1 {
 }
 
 h3 {
-    @apply text-2xl md:text-4xl font-bold pt-8 md:pt-20 text-gray-900 dark:text-gray-300 leading-snug max-w-3xl;
+    @apply text-2xl md:text-4xl font-bold pt-8 md:pt-20 text-gray-900 dark:text-gray-300 leading-loose max-w-3xl;
 }
 
 p {
