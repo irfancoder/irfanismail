@@ -1,23 +1,24 @@
 <template>
     <layout-base>
-        <div class="container mx-auto">
-            <h3 class="text-5xl font-semibold pt-16 pb-4 text-gray-900 dark:text-gray-50"></h3>
+        <div class="w-full px-4 md:px-0">
+            <form name="contact" method="POST" data-netlify="true">
+                <div class="form">
+                    <h3 class="text-3xl md:text-5xl font-semibold pt-8 md:pt-16 pb-4 text-gray-900 dark:text-gray-50">What's up?</h3>
+
+                    <label for="name">Name</label>
+                    <input type="text" name="name" v-model="form.name" />
+                    <label for="name">Email</label>
+                    <input type="email" name="email" v-model="form.email" />
+                    <label for="purpose">Type of Inquiry</label>
+                    <select name="purpose" v-model="form.purpose">
+                        <option v-for="(purpose, key) in purposes" :key="key" :value="key">{{ purpose }}</option>
+                    </select>
+                    <label for="message">Message</label>
+                    <textarea name="message" cols="40" rows="5" v-model="form.message" :placeholder="form.purpose === 'hiring' ? 'Cool, you can also connect to me on LinkedIn' : '...'"></textarea>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
         </div>
-        <form name="contact" method="POST" data-netlify="true">
-            <div class="form">
-                <label for="name">Name</label>
-                <input type="text" name="name" v-model="form.name" />
-                <label for="name">Email</label>
-                <input type="email" name="email" v-model="form.email" />
-                <label for="purpose">Type of Inquiry</label>
-                <select name="purpose" v-model="form.purpose">
-                    <option v-for="(purpose, key) in purposes" :key="key" :value="key">{{ purpose }}</option>
-                </select>
-                <label for="message">Message</label>
-                <textarea name="message" cols="40" rows="5" v-model="form.message" :placeholder="form.purpose === 'hiring' ? 'Cool, you can also connect to me on LinkedIn' : '...'"></textarea>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
     </layout-base>
 </template>
 
@@ -67,7 +68,7 @@ export default {
     }
 
     > button[type='submit'] {
-        @apply text-white py-2 bg-gray-400 rounded;
+        @apply text-white font-medium py-2 bg-gradient-to-b from-blue-500 to-blue-600 rounded hover:from-blue-600;
     }
 }
 </style>

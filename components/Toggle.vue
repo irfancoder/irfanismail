@@ -1,11 +1,11 @@
 <template>
-    <div class="flex items-center space-x-6 py-16">
-        <span class="label">Fun</span>
+    <div class="flex items-center space-x-6 py-16 px-4 md:px-0">
+        <span :class="`label ${$colorMode.preference == 'dark' ? '' : 'label-fun'}`">Fun</span>
         <label class="switch">
             <input type="checkbox" v-model="getTheme" @change="changeTheme($event)" />
             <span class="slider round"></span>
         </label>
-        <span class="label">Professional</span>
+        <span :class="`label ${$colorMode.preference == 'dark' ? 'label-pro' : ''}`">Professional</span>
     </div>
 </template>
 
@@ -25,9 +25,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .label {
-    @apply text-xl font-bold dark:text-white;
+    @apply text-xl font-bold text-gray-500;
+    &-pro {
+        @apply dark:text-white;
+    }
+    &-fun {
+        @apply text-gray-900;
+    }
 }
 
 .switch {

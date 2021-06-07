@@ -20,4 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+button:disabled {
+    @apply text-gray-500 cursor-not-allowed;
+}
 </style>

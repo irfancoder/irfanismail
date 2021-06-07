@@ -84,8 +84,8 @@
                 </template>
             </skills> -->
 
-            <div class="py-28">
-                <h3 class="text-5xl font-semibold pb-4 text-gray-900 dark:text-gray-50">Projects</h3>
+            <div class="py-28 table-wrap">
+                <h3 class="text-3xl md:text-5xl font-semibold pb-4 text-gray-900 dark:text-gray-50">Projects</h3>
 
                 <table class="table">
                     <thead>
@@ -95,17 +95,19 @@
                             <th width="40%">Description</th>
                             <th>Language</th>
                             <th>Created at</th>
-                            <th>Size (kB)</th>
+                            <th>Size (MB)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="(project, index) in projects" :key="project.id">
                             <td>{{ index + 1 + (page - 1) * per_page }}</td>
-                            <td>{{ project.name }}</td>
+                            <td>
+                                <a :href="project.html_url" target="_blank" class="underline">{{ project.name }}</a>
+                            </td>
                             <td>{{ project.description }}</td>
                             <td>{{ project.language }}</td>
-                            <td>{{ project.created_at }}</td>
-                            <td>{{ project.size }}</td>
+                            <td>{{ parseDate(project.created_at) }}</td>
+                            <td>{{ parseKBtoMB(project.size) }}</td>
                         </tr>
                         <tr v-if="projects.length == 0">
                             <td colspan="6">No more projects listed</td>
@@ -126,14 +128,15 @@
 
 <script>
 import _ from 'lodash'
+import moment from 'moment'
 import LayoutBase from '~/components/layout/LayoutBase.vue'
 import Hero from '~/components/home/Hero.vue'
 import Media from '~/components/home/Media.vue'
 import Toggle from '~/components/Toggle.vue'
-import Skills from '~/components/home/Skills.vue'
+// import Skills from '~/components/home/Skills.vue'
 import PaginateTable from '~/components/PaginateTable.vue'
 export default {
-    components: { LayoutBase, Hero, Media, Toggle, Skills, PaginateTable },
+    components: { LayoutBase, Hero, Media, Toggle, PaginateTable },
     data() {
         return {
             projects: [],
@@ -143,11 +146,17 @@ export default {
     },
 
     async fetch() {
-        this.projects = await fetch(`https://api.github.com/users/irfancoder/repos?per_page=${this.per_page}&page=${this.page}`).then(res => res.json())
+        this.projects = await fetch(`https://api.github.com/users/irfancoder/repos?per_page=${this.per_page}&page=${this.page}&sort=created&direction=desc`).then(res => res.json())
     },
     methods: {
         async updateProjects(_page) {
-            this.projects = await fetch(`https://api.github.com/users/irfancoder/repos?per_page=${this.per_page}&page=${_page}`).then(res => res.json())
+            this.projects = await fetch(`https://api.github.com/users/irfancoder/repos?per_page=${this.per_page}&page=${_page}&sort=created&direction=desc`).then(res => res.json())
+        },
+        parseDate(date) {
+            return moment(date).format('D MMM YYYY')
+        },
+        parseKBtoMB(size) {
+            return (size / 1000).toFixed(2)
         },
         update(direction) {
             this.page = this.page + direction
@@ -158,30 +167,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main {
-    @apply gap-28;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    @apply gap-4 md:gap-28 grid grid-cols-1 md:grid-cols-1/3;
 }
 
 .title {
-    @apply font-bold;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-}
-
-.links {
-    padding-top: 15px;
+    @apply font-bold block;
 }
 
 .skills-group {
@@ -191,8 +181,11 @@ export default {
     @apply w-16 h-auto;
 }
 
+.table-wrap {
+    @apply relative px-4;
+}
 .table {
-    @apply relative max-w-full w-full my-4;
+    @apply relative w-full my-4 block whitespace-nowrap md:whitespace-pre-wrap overflow-x-auto md:overflow-x-hidden;
 
     td,
     th {
@@ -217,13 +210,15 @@ export default {
         @apply bg-gray-50 py-2;
     }
 
-    > tfoot > tr > td {
-        @apply bg-gray-300 py-4 text-right;
-        &:first-child {
-            @apply rounded-bl-md;
-        }
-        &:last-child {
-            @apply rounded-br-md;
+    > tfoot > tr {
+        > td {
+            @apply bg-gray-300 py-4 md:text-right;
+            &:first-child {
+                @apply rounded-bl-md;
+            }
+            &:last-child {
+                @apply rounded-br-md;
+            }
         }
     }
 }
