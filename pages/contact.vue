@@ -1,7 +1,7 @@
 <template>
     <layout-base>
         <div class="w-full px-4 md:px-0">
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true" action="/contact" @submit.prevent="submit">
                 <div class="form">
                     <h3 class="text-3xl md:text-5xl font-semibold pt-8 md:pt-16 pb-4 text-gray-900 dark:text-gray-50">What's up?</h3>
 
@@ -16,6 +16,8 @@
                     <label for="message">Message</label>
                     <textarea name="message" cols="40" rows="5" v-model="form.message" :placeholder="form.purpose === 'hiring' ? 'Cool, you can also connect to me on LinkedIn' : '...'"></textarea>
                     <button type="submit">Submit</button>
+
+                    <label v-if="submitted" class="text-center">Thank you, I will try to reply within 24 hrs.</label>
                 </div>
             </form>
         </div>
@@ -36,7 +38,19 @@ export default {
             messagePlacehoder: {
                 hiring: 'Cool, you can also connect with me on LinkedIn'
             },
+            submitted: false,
             form: {
+                purpose: 'sayhi',
+                name: '',
+                email: '',
+                message: ''
+            }
+        }
+    },
+    methods: {
+        submit() {
+            this.submitted = true
+            this.form = {
                 purpose: 'sayhi',
                 name: '',
                 email: '',
