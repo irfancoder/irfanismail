@@ -1,15 +1,10 @@
 <template>
     <layout-base>
         <div class="w-full px-4 md:px-0">
-            <form id="contact" name="contact" method="post" data-netlify-honeypot="bot-field" data-netlify="true" action="/contact" @submit.prevent="submit">
+            <form id="contact" name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true" @submit.prevent="submit">
+                <input type="hidden" name="form-name" value="contact" />
                 <div class="form">
                     <h3 class="text-3xl md:text-5xl font-semibold pt-8 md:pt-16 pb-4 text-gray-900 dark:text-gray-50">What's up?</h3>
-                    <p hidden>
-                        <label>
-                            Don’t fill this out:{" "}
-                            <input name="bot-field" v-model="form" />
-                        </label>
-                    </p>
 
                     <label for="name">Name</label>
                     <input type="text" name="name" v-model="form.name" />
