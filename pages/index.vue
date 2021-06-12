@@ -83,10 +83,9 @@
                     </div>
                 </template>
             </skills> -->
+            <h3 class="text-3xl md:text-5xl font-semibold p-4 text-gray-900 dark:text-gray-50">Projects</h3>
 
-            <div class="py-28 table-wrap">
-                <h3 class="text-3xl md:text-5xl font-semibold pb-4 text-gray-900 dark:text-gray-50">Projects</h3>
-
+            <div class="pb-28 table-wrap">
                 <table class="table">
                     <thead>
                         <tr>
@@ -182,10 +181,10 @@ export default {
 }
 
 .table-wrap {
-    @apply relative px-4;
+    @apply relative px-4 overflow-x-auto md:overflow-x-hidden;
 }
 .table {
-    @apply relative w-full my-4 block whitespace-nowrap md:whitespace-pre-wrap overflow-x-auto md:overflow-x-hidden;
+    @apply w-full my-4 whitespace-nowrap md:whitespace-pre-wrap;
 
     td,
     th {
