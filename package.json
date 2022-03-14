@@ -12,7 +12,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/color-mode": "^2.0.5",
-    "@octokit/core": "^3.4.0",
+    "@octokit/core": "^3.6.0",
     "core-js": "^3.9.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
