@@ -1,7 +1,7 @@
 ---
 type: post
 title: the tree-shake mystery -- part 1
-date: 2023/04/16
+date: 2023-04-16
 description: When building an NPM library or application, we should always build our code that allows it to be tree-shaken.
 tag: webpack, tree-shake, optimization
 author: You

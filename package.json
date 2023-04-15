@@ -24,5 +24,7 @@
     "trailingComma": "none",
     "semi": false
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "sharp": "^0.32.0"
+  }
 }
