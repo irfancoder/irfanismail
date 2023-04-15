@@ -1,4 +1,5 @@
 ---
+type: post
 title: every developer should try tmux
 date: 2023/04/15
 description: tmux is a tool I use on a day-to-day basis that helps me to manage my command line operations.
@@ -7,21 +8,15 @@ author: You
 image: /images/ideas/tmux/tmux_1.png
 ---
 
-import Image from 'next/image'
+`tmux` is a tool I use on a day-to-day basis and I'm glad I came across it (thank you [Primeagen](https://www.youtube.com/@ThePrimeagen)). If you're unfamiliar with tmux, it is a tool that helps you to manage your command line operations.
 
-`tmux` is a tool I use on a day-to-day basis and I'm glad I came across it (thanks [Primeagen](https://www.youtube.com/@ThePrimeagen)). If you're unfamiliar with tmux, it is a tool that helps you to manage your command line operations.
+![tmux_1](/images/ideas/tmux/tmux_1.png)
 
-<Image
-  src="/images/ideas/tmux/tmux_1.png"
-  alt="Photo"
-  width={660}
-  height={400}
-  priority
-  className="next-image"
-/>
-<small style={{ display: 'block', textAlign: 'center' }}>_Typical view of my tmux terminal_</small>
+<footer> _Typical view of my tmux terminal_</footer>
 
-As you can see above, you can create **sessions, windows and panes** inside your terminal and the best part is, it works with the default terminal in your OS. No need to install iterm2 or any other terminal emulators out there. Goes without saying, you can also use it with iterm2, but you will find that the most used features are often overlapping, so might as well stick to one.
+As you can see above, you can create **sessions, windows and panes** inside your terminal and the best part is, it works with the default terminal that comes with your OS.
+
+No need to install iterm2 or any other terminal emulators out there. Goes without saying, you can also use it with iterm2, but you will find that the most used features are often overlapping, so might as well stick to one.
 
 Now, this is not a tutorial post on how to use tmux. If you are interested in that, here's the [cheatsheet](https://tmuxcheatsheet.com/) and have fun.
 
@@ -31,7 +26,7 @@ Now, this is not a tutorial post on how to use tmux. If you are interested in th
 
 > A session is a **group of windows**, a window is a **group of panes** and a pane is a **single unit interface**
 
-On top of being able to look like a hackerman trying to crack open a bank, you gain the ability to group your workspace much more efficiently.
+On top of being able to look like a [Pakistani hackermen planning for a heist](https://www.youtube.com/watch?v=AhU45W0JSp8), you gain the ability to group your workspace much more efficiently.
 
 ### Sessions are saved
 
@@ -63,7 +58,7 @@ By default, tmux has an internal clipboard process that is separate from the sys
 
 ### Sessions are ephemeral (not persistently stored)
 
-Wait, but you said earlier, the sessions are saved, what gives? Yes they are saved _in memory_, as long as the computer is alive. If you shut down your PC, you will lose all your sessions.
+Wait, but you said earlier, the sessions are saved, what gives? Yes they are saved but _in memory_. If you shut down your PC, you will lose all your sessions.
 
 I have a dual-boot PC running Windows & Ubuntu, for gaming and work and this impacts me a lot. However, its not that bad, because you can script some of the common ops in tmux to quickly get up to speed.
 
@@ -73,7 +68,7 @@ I have a dual-boot PC running Windows & Ubuntu, for gaming and work and this imp
 
 Here is the tmux config file I use.
 
-```conf
+```bash copy showLineNumbers filename="~/.tmux.conf"
 set -g @uptime_d 0
 set -g @uptime_dy 0
 set -g @uptime_h 2
@@ -136,8 +131,6 @@ set -g visual-bell off
 set -g visual-silence off
 set -g word-separators " "
 ```
-
-<small style={{ display: 'block', textAlign: 'center' }}>_Path: ~/.tmux.conf_</small>
 
 Apart from the styling changes, I have also modified the activation key-binding from ~~Ctrl-b~~ to **Ctrl-Space**. Below are the rest:
 
