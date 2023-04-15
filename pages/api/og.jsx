@@ -1,12 +1,11 @@
 import { ImageResponse } from '@vercel/og'
-import { NextApiRequest } from 'next'
 import React from 'react'
 
 export const config = {
   runtime: 'edge'
 }
 
-export default function handler(req: NextApiRequest) {
+export default function handler(req) {
   const { text } = req.body
   return new ImageResponse(
     (
