@@ -1,11 +1,11 @@
 ---
 type: post
 title: the tree-shake mystery -- part 1
-date: 2023/04/15
+date: 2023/04/16
 description: When building an NPM library or application, we should always build our code that allows it to be tree-shaken.
-tag: tmux, productivity
+tag: webpack, tree-shake, optimization
 author: You
-image: /images/ideas/tmux/tmux_1.png
+image: /images/ideas/webpack/webpack_0.png
 ---
 
 _Note: This is an old post, rewritten for documentation and clarity._
@@ -94,8 +94,8 @@ And if I'm not mistaken, the final build at the project level ends up at **1.2MB
 
 ## Conclusion
 
-Tree-shaking is one of the mechanism bundlers have to cut down unnecessary weight at the final build. However, it's not the only mechanism AND certainly not the one that you should depend on to optimize your code.
+Tree-shaking is one of the mechanism bundlers have, to cut down unnecessary weight at the final build. However, it's not the only mechanism AND certainly not the one that you should depend on to optimize your code.
 
-The bulk of bundle optimizations are done through other lazy-loading, code-splitting as demonstrated earlier.
+The bulk of bundle optimizations are done through other means, such as lazy-loading, code-splitting as demonstrated earlier.
 
 However, as a developer, the bare minimum is to understand how libraries are being imported and the underlying process that goes into bundling it. In Part 2, I will expand further on tree-shaking best practices, so stay tuned.

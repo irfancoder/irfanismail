@@ -12,7 +12,7 @@ image: /images/ideas/tmux/tmux_1.png
 
 ![tmux_1](/images/ideas/tmux/tmux_1.png)
 
-<footer> _Typical view of my tmux terminal_</footer>
+_Typical view of my tmux terminal_
 
 As you can see above, you can create **sessions, windows and panes** inside your terminal and the best part is, it works with the default terminal that comes with your OS.
 
@@ -30,9 +30,9 @@ On top of being able to look like a [Pakistani hackermen planning for a heist](h
 
 ### Sessions are saved
 
-Also, you can create multiple sessions at once and each session is independent of the terminal's lifecycle! Hold up, what does this mean? Say if you accidentally close the terminal, the sessions you created are not lost! You can resume your session just by typing `tmux attach` or `tmux attach -t session_name`
+Also, you can create multiple sessions at once and each session is independent of the terminal's lifecycle! What does this mean? Say if you accidentally close the terminal, the sessions you created are not lost! You can resume your session just by typing `tmux attach` or `tmux attach -t session_name`
 
-Now, lets extend this further, say you are connected in an SSH session with a server, you can actually switch session to another workspace without losing the original connection! To me that is insane win for devops!
+Now, lets extend this further, if you are connected in an SSH session with a server, you can actually switch session to another workspace without losing the original connection! To me that is insane win for devops!
 
 ### Plugins & Scripting
 
@@ -58,9 +58,9 @@ By default, tmux has an internal clipboard process that is separate from the sys
 
 ### Sessions are ephemeral (not persistently stored)
 
-Wait, but you said earlier, the sessions are saved, what gives? Yes they are saved but _in memory_. If you shut down your PC, you will lose all your sessions.
+Wait, but wasn't it saved, what gives? Yes they are saved but _in memory_. If you shut down your PC, you will lose all your sessions.
 
-I have a dual-boot PC running Windows & Ubuntu, for gaming and work and this impacts me a lot. However, its not that bad, because you can script some of the common ops in tmux to quickly get up to speed.
+I have a dual-boot PC running Windows & Ubuntu, for gaming and work, so I suffered from this a lot. However, its not that bad, because you can script some of the common ops in tmux to quickly get up to speed.
 
 ---
 
@@ -130,6 +130,11 @@ set -g visual-activity off
 set -g visual-bell off
 set -g visual-silence off
 set -g word-separators " "
+
+bind - split-window -v
+bind | split-window -h
+unbind %
+unbind '"'
 ```
 
 Apart from the styling changes, I have also modified the activation key-binding from ~~Ctrl-b~~ to **Ctrl-Space**. Below are the rest:
