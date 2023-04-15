@@ -1,18 +1,18 @@
 ---
 type: post
-title: the tree-shake mystery -- part 1
+title: the tree-shake mystery - part 1
 date: 2023-04-16
 description: When building an NPM library or application, we should always build our code that allows it to be tree-shaken.
-tag: webpack, tree-shake, optimization
+tag: webpack, vite, tree-shake, optimization
 author: You
-image: /images/ideas/webpack/webpack_0.png
+image: /images/ideas/treeshake/webpack_0.png
 ---
 
 _Note: This is an old post, rewritten for documentation and clarity._
 
 When building an NPM library or application, we should always _(apart from providing TS types for auto-completion)_ build our code that allows it to be **tree-shaken**.
 
-> Tree-shaking is a deadcode elimination process done by a bundler (eg. webpack, rollup etc) when building an application or a library..
+> Tree-shaking is a deadcode elimination process done by a bundler (eg. webpack, rollup etc) when building an application or a library.
 
 TLDR; tree-shake is not the only thing we should be looking at to optimize our code.
 
