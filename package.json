@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/og": "^0.5.2",
     "gray-matter": "^4.0.2",
     "next": "12.0.8",
     "nextra": "^2.0.0-beta.5",
@@ -23,5 +24,6 @@
     "tabWidth": 2,
     "trailingComma": "none",
     "semi": false
-  }
+  },
+  "devDependencies": {}
 }
