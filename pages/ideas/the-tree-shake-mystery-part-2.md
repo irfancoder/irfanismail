@@ -4,7 +4,7 @@ title: the tree-shake mystery - part 2
 date: 2023-04-17
 description: The best thing you can do as a developer, is to build the right environment that supports tree shaking and pray that it works
 tag: webpack, vite, tree-shake, optimization
-author: You
+author: irfanismail
 image: /images/ideas/treeshake/webpack_0.png
 ---
 

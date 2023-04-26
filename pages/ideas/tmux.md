@@ -4,7 +4,7 @@ title: every developer should try tmux
 date: 2023/04/15
 description: tmux is a tool I use on a day-to-day basis that helps me to manage my command line operations.
 tag: tmux, productivity
-author: You
+author: irfanismail
 image: /images/ideas/tmux/tmux_1.png
 ---
 
