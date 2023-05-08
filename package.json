@@ -26,6 +26,8 @@
     "semi": false
   },
   "devDependencies": {
-    "sharp": "^0.32.0"
+    "@types/node": "^20.1.0",
+    "sharp": "^0.32.0",
+    "typescript": "^5.0.4"
   }
 }
