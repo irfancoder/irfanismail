@@ -5,7 +5,7 @@ date: 2023-05-08
 description: This guide goes through how to setup mixpanel collection via proxy in NextJS and why it should be considered as standard.
 tag: mixpanel, proxy, nextjs, rewrite
 author: irfanismail
-image: http://localhost:3000/api/og?title=mixpanel collection via proxy with nextjs&emoji=📖
+image: http://www.irfanismail.com/api/og?title=mixpanel collection via proxy with nextjs&emoji=📖
 ---
 
 # Overview
