@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/og": "^0.5.4",
     "gray-matter": "^4.0.2",
     "next": "^13.3.0",
     "nextra": "^2.4.0",
