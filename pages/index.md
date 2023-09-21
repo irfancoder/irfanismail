@@ -14,7 +14,7 @@ Also serves as my personal website-lah 😆
 
 I enjoy building design systems and UI libraries, and primarily work with **Javascript/Typescript** in **React**'s ecosystem.
 
-I am currently self-employed/freelance (since July 2022) and my most recent contributions are in the open-data initiatives led by several Malaysian government ministries, which you can find out more in [Portfolio](/portfolio).
+I am currently working as a Lead FE for Unit Nukleus GovTech under Ministry of Finance. You can find out more about my past works in [Portfolio](/portfolio).
 
 Have a blessed day & asalamualaikum
 
