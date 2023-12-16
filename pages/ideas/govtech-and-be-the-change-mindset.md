@@ -27,11 +27,8 @@ This is where the GovTech unit comes in. Earlier this year (2023), the governmen
 
 ### Some tweets from PMX about the govtech initiative that you might have missed:
 
-<blockquote class="twitter-tweet"><p lang="in" dir="ltr">Hari ini saya telah mempengerusikan Mesyuarat Majlis Tindakan Ekonomi Bilangan 7 Tahun 2023. Mesyuarat pada kali ini membincangkan mengenai perancangan Kerajaan terkait dengan peralihan berkala ke arah GovTech. <br><br>GovTech adalah pendekatan keseluruhan kerajaan… <a href="https://t.co/LahecU4fMf">pic.twitter.com/LahecU4fMf</a></p>&mdash; Anwar Ibrahim (@anwaribrahim) <a href="https://twitter.com/anwaribrahim/status/1734221004032074136?ref_src=twsrc%5Etfw">December 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
----
-
-<blockquote class="twitter-tweet"><p lang="in" dir="ltr">Hari ini Ketua Setiausaha Negara Tan Sri Dato’ Seri Zuki Ali telah meluncurkan pembaharuan portal Data Terbuka Sektor Awam (<a href="https://t.co/Xn4CsYUELW">https://t.co/Xn4CsYUELW</a>) iaitu sebuah portal data terbuka rasmi kerajaan Malaysia di Persidangan Digital Sektor Awam 2023.<br><br>Pembaharuan ini menandakan… <a href="https://t.co/G3ErKjLkfC">pic.twitter.com/G3ErKjLkfC</a></p>&mdash; Anwar Ibrahim (@anwaribrahim) <a href="https://twitter.com/anwaribrahim/status/1701889916224106819?ref_src=twsrc%5Etfw">September 13, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+1. [Pelancaran data.gov.my dan pengenalan Unit Nukleus Govtech](https://twitter.com/anwaribrahim/status/1701889916224106819?ref_src=twsrc%5Etfw)
+2. [Pengenalan GovTech dan inisiatif masa depan](https://twitter.com/anwaribrahim/status/1734221004032074136?ref_src=twsrc%5Etfw)
 
 ---
 
