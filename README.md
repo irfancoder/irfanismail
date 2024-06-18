@@ -7,3 +7,4 @@ Contains the following:
 - **Ideas**: My thoughts on life, career and many more
 - **Portfolio**: Past works
 - **About**: Short intro about myself & contact details
+-test
