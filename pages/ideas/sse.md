@@ -1,5 +1,5 @@
 ---
-type: posts
+type: post
 title: sse helper
 description: simple sse abstraction. used in nextjs
 date: 2024-09-25
