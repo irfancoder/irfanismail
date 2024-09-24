@@ -3,6 +3,7 @@ type: posts
 title: sse helper
 description: simple sse abstraction. used in nextjs
 date: 2024-09-25
+tag: typescript, javascript, sse, nextks
 ---
 
 Simple Server-Sent Event (SSE) helper for nextjs
