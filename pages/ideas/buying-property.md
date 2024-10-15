@@ -21,21 +21,21 @@ _PS. The milk is in the fridge_
 
 ### Problem #1: Fool’s Tycoon Dream
 
-For many, buying a house will be the single most expensive thing a person buys in their lifetime.
+For many, a house will be the single most expensive thing they buy.
 
 Yet many dream, if given the chance, to be a mini ‘real estate tycoon’ and live off rent from their tenants. Not only that, they even strategize how their tenants rent will help finance their next property, so they can 10x the passive income. These are the same people that will proudly come out and say,
 
-> “I am a proud owner of 10 properties which are now worth RM 5M”
+> I am a proud owner of 10 properties which are now worth RM 5M
 
 when in fact, they are nett RM -10M in debt, excluding inflation for the next 30 years.
 
-> “This is how I beat the system; by getting the tenants to pay for the mortgage”
+> This is how I beat the system; by getting the tenants to pay for the mortgage
 
-but scared shit when the tenants leave and have to pay the mortgage themselves.
+but frowns when the tenants leave and have to pay the mortgage themselves.
 
 When their property can’t get tenants, they will say,
 
-> “It’s ok, my son/daughter can live or inherit the property when I pass”.
+> It’s ok, my son/daughter can live or inherit the property when I pass.
 
 Guess what happened when their parents passed. Are they living back in the kampung?
 
@@ -88,7 +88,7 @@ Once again, these bulk purchases may not be a problem in practice (because willi
 
 ### To crash or not to crash?
 
-The property market has been due for a correction for a very long time. COVID was the perfect time to reset & even the playing field. It will weed out the weak players and ‘insaf’kan the big ones. However, the government stepped in & gave stimulus packages; by relieving stamp duties and fees. They could’ve let it run its natural course and pin the blame on the pandemic. Who in the right mind would be thinking about buying property in the middle of a pandemic anyways?
+The property market has been due for a correction for a very long time. COVID was the perfect time to reset & even the playing field. It will weed out the weak players and ‘insaf’kan the big ones. However, the government stepped in & gave stimulus packages; by relieving stamp duties and fees. They could’ve let it run its natural course and pin the blame on the pandemic. Who in the right mind would be thinking about buying property in the middle of a pandemic anyway?
 
 I once read that the government will never allow the property market to go through a correction. Maybe it involves their own personal interest, or has it become a bubble to the point where it becomes too big to fail, who knows.
 
@@ -98,12 +98,12 @@ I once read that the government will never allow the property market to go throu
 
 If I am the government, I will look at policies to:
 
-- Penalise the housing developers the longer an inventory remains empty. Set a grace period of 1 year after completion, before the penalty kicks in. This is to incentivize clearing of stock; rather than holding at inflated prices for no good reason (including price control).
+- Penalise the housing developers the longer an inventory remains hanging. Set a grace period of 1 year after completion, before the penalty kicks in. This is to incentivize clearing of stock; rather than holding at inflated prices for no good reason (including price control).
 - Revise what qualifies as income. Rental income should NOT be considered in the DSR calculation.
 - Introduce new real estate tax for individuals holding more than 2 properties. To disincentive property as investment vehicle
 
 On a personal level, as a Muslim, I’m very steadfast on staying away from riba, and I call on others to do the same.
 
-While many may have given in the towel, and get a hire-purchase loan from the bank to buy a property, I plan to save & invest all the way up to buying a property in cash, insyaAllah. Sounds crazy to hear in this day and age, but [the opposite is even worse for a Muslim](https://quran.com/2?startingVerse=278). May Allah accept this as a form of struggle from me & as a good deed.
+While many may have given in the towel, and get a hire-purchase loan from the bank to buy a property, I plan to save & invest all the way to buy in cash, insyaAllah. Sounds crazy to hear in this day and age, but [the opposite is even worse for a Muslim](https://quran.com/2?startingVerse=278). May Allah accept this as a form of struggle from me & a good deed.
 
 In the meantime, Wahed and stock market it is!
