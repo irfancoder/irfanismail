@@ -2,7 +2,7 @@
 type: post
 title: Lofty goal
 date: 2024-12-08
-description:
+description: Setting a lofty goal is easier said than done, which makes it worth celebrating.
 tag: personal
 author: irfanismail
 image: http://www.irfanismail.com/api/og?title=lofty goal
@@ -14,6 +14,6 @@ He is a high school dropout (not even college/university) turned software engine
 
 For the most part, it makes me happy to learn from them and improve myself, however internally, it challenged me at the same time. It's a weird feeling indeed. But, that made me question:
 
-> Can I also achieve such feat one day?
+> Could I also achieve such feat one day?
 
 InsyaAllah, one day.
